@@ -1,0 +1,56 @@
+[versions]
+# Android Gradle Plugin (8.x line — stable, Gradle 8.13+ compatible)
+agp = "8.13.2"
+# Kotlin + Compose Compiler plugin (versions must match exactly)
+kotlin = "2.3.21"
+# KSP2 for Room annotation processing
+ksp = "2.3.12"
+# AndroidX stack (era-consistent with compileSdk 36 / AGP 8.13)
+room = "2.8.5"
+composeBom = "2025.09.00"
+activityCompose = "1.11.0"
+lifecycle = "2.9.4"
+coreKtx = "1.17.0"
+# Third-party
+coroutines = "1.10.2"
+okhttp = "4.12.0"
+# Mozilla GeckoView (Firefox ESR 128 build)
+geckoview = "128.0.20240704121409"
+
+[libraries]
+# AndroidX core
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+
+# Compose (BOM-managed)
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+compose-ui = { group = "androidx.compose.ui", name = "ui" }
+compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+compose-material-icons = { group = "androidx.compose.material", name = "material-icons-extended" }
+
+# Lifecycle / ViewModel
+androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+
+# Room (local SQLite traffic buffer)
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+
+# Coroutines
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
+# OkHttp (native repeater engine)
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+
+# GeckoView browser engine
+geckoview = { group = "org.mozilla.geckoview", name = "geckoview", version.ref = "geckoview" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
